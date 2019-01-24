@@ -12,12 +12,7 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
-
-
-
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +31,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-    int counter = 50;
-
+    counter = 50;
 
     public void incOnClick(View view) {
-        TextView t = (TextView) findViewById(R.id.outputTextView);
         counter++;
-        t.setText("" + counter);
+        TextView t = (TextView) findViewById(R.id.outputTextView);
+        t.setText(Integer.toString(counter));
     }
 
     public void decOnClick(View view) {
-        TextView t = (TextView) findViewById(R.id.outputTextView);
         counter--;
-        t.setText("" + counter);
+        TextView t = (TextView) findViewById(R.id.outputTextView);
+        t.setText(Integer.toString(counter));
     }
 
 
