@@ -1,3 +1,5 @@
+//Prof. Snellen's way
+
 package com.example.lab1a;
 
 import android.os.Bundle;
@@ -13,7 +15,25 @@ import android.widget.*;
 public class MainActivity extends AppCompatActivity {
 
     private int counter;
+    
+    
 
+    public void incOnClick(View view) {
+        counter++;
+        displayCounter();
+    }
+
+    public void decOnClick(View view) {
+        counter--;
+        displayCounter();
+    }
+
+    private void displayCounter() {
+        TextView t = (TextView) findViewById(R.id.outputTextView);
+        t.setText(Integer.toString(counter));
+    }
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,23 +49,14 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        
+        // good place to initialize things, but not declare
+        
+        counter = 50;
+        displayCounter();
     }
-
-    counter = 50;
-
-    public void incOnClick(View view) {
-        counter++;
-        TextView t = (TextView) findViewById(R.id.outputTextView);
-        t.setText(Integer.toString(counter));
-    }
-
-    public void decOnClick(View view) {
-        counter--;
-        TextView t = (TextView) findViewById(R.id.outputTextView);
-        t.setText(Integer.toString(counter));
-    }
-
-
+    
+    
 
 
 
